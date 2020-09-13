@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import './Checkout.scss';
 
@@ -21,6 +22,7 @@ export default function Checkout({
     userName: false,
     venmo: false,
   });
+  const history = useHistory();
 
   const goBack = () => {
     closeCheckout(false);
@@ -41,6 +43,11 @@ export default function Checkout({
   const handleChange = (e: any) => {
     const itemToUpdate: any = e.target.name;
     setUser({ ...user, [itemToUpdate]: true });
+  };
+
+  const submitData = () => {
+    // todo send to api
+    history.push('/success');
   };
 
   return (
@@ -106,7 +113,11 @@ export default function Checkout({
             </label>
           </form>
         </div>
-        <button className="finalCheckout" disabled={!check}>
+        <button
+          className="finalCheckout"
+          disabled={!check}
+          onClick={() => submitData()}
+        >
           Complete Order
         </button>
       </div>
