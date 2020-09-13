@@ -34,6 +34,7 @@ export default function Inventory({ coffee }: IInventoryProps) {
     const itemToUpdate: any = e.target.name;
     setInfo({ ...info, [itemToUpdate]: e.target.value });
   };
+
   return (
     <div className="formWrapper">
       <form onSubmit={(e) => handleSubmit(e)}>

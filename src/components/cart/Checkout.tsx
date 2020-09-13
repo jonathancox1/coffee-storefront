@@ -87,7 +87,6 @@ export default function Checkout({
               placeholder="enter your name"
               onChange={(e) => handleChange(e)}
             />
-            <br />
             <input
               type="text"
               name="venmo"

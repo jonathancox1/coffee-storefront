@@ -7,7 +7,7 @@
   position: absolute;
   margin: 120px 5%;
   justify-content: center;
-  border: 1px solid grey;
+  border: 2px solid grey;
   box-shadow: rgba(0, 0, 0, 0.22) 0px 5px 43px, rgba(0, 0, 0, 0.18) 0px 4px 11px;
 
   .checkoutModal {
@@ -94,6 +94,8 @@
     }
 
     .paymentDetails {
+      text-align: center;
+
       .paymentHeading {
         font-size: 18px;
         font-weight: 600;
@@ -101,7 +103,7 @@
 
       input {
         width: 150px;
-        margin: 5px 0;
+        margin: 5px 5px;
 
         &.checkbox {
           width: 25px;
