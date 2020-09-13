@@ -1,0 +1,23 @@
+.successWrapper {
+  box-sizing: border-box;
+  //   width: 100vw;
+  //   height: 100vh;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 250px;
+  user-select: none;
+
+  .thankYou {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .returnLink {
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .emoji {
+    font-size: 35px;
+  }
+}

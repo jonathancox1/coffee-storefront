@@ -14,13 +14,12 @@ export default function Checkout({
   closeCheckout,
   items,
 }: ICheckoutProps) {
-  const [total, setTotal] = useState<number>(0);
-  const [shipping, setShipping] = useState<number>(0);
-  const [subtotal, setSubtotal] = useState<number>(0);
   const [check, toggleCheck] = useState<boolean>(false);
   const [user, setUser] = useState({
     userName: false,
     venmo: false,
+    address: '',
+    zipcode: '',
   });
   const history = useHistory();
 
@@ -31,22 +30,17 @@ export default function Checkout({
   const generateSubTotal = () => {
     let tempTotal = 0;
     items.forEach((item: any) => (tempTotal = tempTotal + item.price));
-    // setSubtotal(tempTotal);
-    // generateTotal(tempTotal);
     return tempTotal;
-  };
-
-  const generateTotal = (subtotal: number) => {
-    return subtotal + shipping;
   };
 
   const handleChange = (e: any) => {
     const itemToUpdate: any = e.target.name;
-    setUser({ ...user, [itemToUpdate]: true });
+    setUser({ ...user, [itemToUpdate]: e.target.value });
   };
 
   const submitData = () => {
     // todo send to api
+    // user data to api to generate order
     history.push('/success');
   };
 
@@ -64,8 +58,6 @@ export default function Checkout({
             items.map((item: any) => {
               return (
                 <>
-                  {/* <div className="itemQuantity"></div> */}
-
                   <div className="itemName">{item.name}</div>
                   <div className="itemPrice">${item.price}</div>
                 </>
@@ -74,9 +66,6 @@ export default function Checkout({
 
           <div className="subtotalText"></div>
           <div className="subtotal"></div>
-          {/* <div className="totalText">Shipping</div>
-          <div />
-          <div className="calcTotal">${shipping}</div> */}
           <div className="totalText">Total</div>
           <div className="calcTotal">${generateSubTotal()}</div>
         </div>
@@ -91,13 +80,27 @@ export default function Checkout({
             <input
               type="text"
               name="userName"
-              placeholder="enter your name"
+              placeholder="name"
+              onChange={(e) => handleChange(e)}
+            />
+            <br />
+            <input
+              type="text"
+              name="address"
+              placeholder="street address"
               onChange={(e) => handleChange(e)}
             />
             <input
               type="text"
+              name="zipcode"
+              placeholder="zipcode"
+              onChange={(e) => handleChange(e)}
+            />
+            <br />
+            <input
+              type="text"
               name="venmo"
-              placeholder="enter your venmo account name"
+              placeholder="venmo account name"
               onChange={(e) => handleChange(e)}
             />
             <br />
@@ -106,7 +109,9 @@ export default function Checkout({
               type="checkbox"
               name="agreement"
               onClick={() => toggleCheck((check) => !check)}
-              disabled={!user.userName || !user.venmo}
+              disabled={
+                !user.userName || !user.venmo || !user.address || !user.zipcode
+              }
             />
             <label htmlFor="agreement">
               I have submitted and completed the venmo payment process

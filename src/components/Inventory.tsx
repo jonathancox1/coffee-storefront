@@ -45,7 +45,6 @@ export default function Inventory({ coffee }: IInventoryProps) {
           value={info.name}
           onChange={(e: any) => handleChange(e)}
         ></input>
-        <br />
         <input
           type="number"
           placeholder="quantity"
@@ -53,7 +52,7 @@ export default function Inventory({ coffee }: IInventoryProps) {
           value={info.quantity}
           onChange={(e: any) => handleChange(e)}
         ></input>
-        <br />
+
         <input
           type="number"
           placeholder="price"
@@ -61,7 +60,7 @@ export default function Inventory({ coffee }: IInventoryProps) {
           value={info.price}
           onChange={(e: any) => handleChange(e)}
         ></input>
-        <br />
+
         <textarea
           placeholder="description"
           rows={5}
@@ -69,7 +68,6 @@ export default function Inventory({ coffee }: IInventoryProps) {
           value={info.description}
           onChange={(e: any) => handleChange(e)}
         ></textarea>
-        <br />
         <button type="submit">Add/Update Coffee</button>
         <button type="submit">Remove Coffee</button>
       </form>

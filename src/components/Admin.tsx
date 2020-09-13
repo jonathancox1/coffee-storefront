@@ -13,8 +13,6 @@ export default function Admin() {
   useEffect(() => {
     // TODO call api for current offerings
     // set into currentOfferings
-    // map over offerings building out form to update
-    // have additional form for adding new offering
     setOfferings([
       {
         name: 'Ethiopia Geta Bore',
@@ -78,18 +76,20 @@ export default function Admin() {
   } else {
     return (
       <div className="inventoryWrapper">
-        {currentOfferings.map((coffee: {}, index: number) => {
+        {currentOfferings.map((coffee: any, index: number) => {
           return (
             <>
               <div className="offering">Offering {index + 1}</div>
-              <Inventory coffee={coffee} />
+              <Inventory coffee={coffee} key={coffee.name} />
             </>
           );
         })}
         <div className="offering">
           New Offering {currentOfferings.length + 1}
         </div>
-        <Inventory coffee={{ name: '', price: '', description: '' }} />
+        <Inventory
+          coffee={{ name: '', price: '', quantity: '', description: '' }}
+        />
       </div>
     );
   }
