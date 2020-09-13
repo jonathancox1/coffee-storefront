@@ -1,0 +1,13 @@
+.coffeeWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-gap: 30px;
+  justify-items: center;
+  align-items: center;
+  margin: 20px;
+  //   margin-left: 50%;
+
+  @media (min-width: rem(1600px)) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

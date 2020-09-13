@@ -1,0 +1,18 @@
+.formWrapper {
+  width: 400px;
+
+  form {
+    display: block;
+    width: 500px;
+
+    input {
+      width: 100%;
+      font-size: 16px;
+    }
+
+    textarea {
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+}

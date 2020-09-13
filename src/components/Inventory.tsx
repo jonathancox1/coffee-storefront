@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import './Inventory.scss';
+
 interface IInfo {
   name: string;
   quantity: number;
@@ -7,12 +9,16 @@ interface IInfo {
   description: string;
 }
 
-export default function Inventory() {
+interface IInventoryProps {
+  coffee: any;
+}
+
+export default function Inventory({ coffee }: IInventoryProps) {
   const [info, setInfo] = useState<IInfo>({
-    name: '',
+    name: coffee.name,
     quantity: 0,
-    price: 0,
-    description: '',
+    price: coffee.price,
+    description: coffee.description,
   });
 
   const initialValue = { name: '', quantity: 0, price: 0, description: '' };
@@ -29,8 +35,7 @@ export default function Inventory() {
     setInfo({ ...info, [itemToUpdate]: e.target.value });
   };
   return (
-    <div>
-      Inventory
+    <div className="formWrapper">
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"
@@ -65,6 +70,7 @@ export default function Inventory() {
         ></textarea>
         <br />
         <button type="submit">Add/Update Coffee</button>
+        <button type="submit">Remove Coffee</button>
       </form>
     </div>
   );

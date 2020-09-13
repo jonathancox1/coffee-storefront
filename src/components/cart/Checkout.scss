@@ -1,0 +1,144 @@
+.checkoutWrapper {
+  min-width: 70vw;
+  width: 90vw;
+  height: 80vh;
+  background-color: white;
+  z-index: 1001;
+  position: absolute;
+  margin: 120px 5%;
+  justify-content: center;
+  border: 1px solid grey;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 5px 43px, rgba(0, 0, 0, 0.18) 0px 4px 11px;
+
+  .checkoutModal {
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
+
+    .checkoutHeader {
+      display: grid;
+      grid-template-columns: 1fr 50px;
+      border-bottom: 2px solid black;
+
+      .checkoutTitle {
+        font-size: 25px;
+        font-weight: 600;
+      }
+
+      .exitCheckout {
+        font-size: 30px;
+        font-weight: 600;
+        background-color: transparent;
+        outline: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+
+        &:hover {
+          border: 1px solid black;
+        }
+      }
+    }
+
+    .cartItemsWrapper {
+      display: grid;
+      grid-template-columns: 1fr 25px;
+      justify-content: center;
+      margin: 30px 0;
+      font-size: 16px;
+
+      .itemQuantity {
+      }
+
+      .itemName {
+        text-align: left;
+      }
+
+      .itemPrice {
+      }
+
+      .subtotalText {
+        margin-top: 20px;
+        border-top: 2px dashed black;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .subtotalDiv {
+        margin-top: 20px;
+        border-top: 2px dashed black;
+      }
+
+      .subtotal {
+        margin-top: 20px;
+        border-top: 2px dashed black;
+        text-align: right;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .totalText {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .calcTotal {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    .totalLine {
+      margin: 0 40px;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+    }
+
+    .paymentDetails {
+      .paymentHeading {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      input {
+        width: 150px;
+        margin: 5px 0;
+
+        &.checkbox {
+          width: 25px;
+        }
+      }
+    }
+
+    .finalCheckout {
+      position: absolute;
+      justify-content: center;
+      bottom: 20px;
+      left: 5%;
+      width: 90%;
+      height: 40px;
+      font-size: 18px;
+      font-weight: 600;
+      background-color: white;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        &:disabled {
+          height: 40px;
+          background-color: white;
+        }
+        height: 80px;
+        background-color: lightgrey;
+      }
+    }
+  }
+  &.closed {
+    display: none;
+    margin-right: -100px;
+  }
+
+  &.open {
+    display: block;
+    margin-right: 0px;
+  }
+}
