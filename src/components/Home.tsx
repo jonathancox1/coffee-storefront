@@ -18,10 +18,6 @@ export default function Home() {
     setStatus(true);
   };
 
-  const openCheckout = () => {
-    setCheckout(true);
-  };
-
   const addToCart = (itemToAdd: {}) => {
     const updatedCart = [...currentItems, itemToAdd];
     setItems(updatedCart);
