@@ -1,6 +1,6 @@
 .modalWrapper {
   position: absolute;
-  width: 300px;
+  // width: 300px;
   top: 0;
   right: 0;
   transition: margin 2s ease-in-out;
@@ -8,6 +8,8 @@
   .cartModal {
     min-height: 300px;
     height: 100%;
+
+    transition: margin 2s ease-in-out;
 
     background: grey;
     border-radius: 5px 0 0 5px;
@@ -99,12 +101,23 @@
   }
 
   &.closed {
-    display: none;
-    margin-right: -100px;
+    .cartModal {
+      top: 0;
+      right: -50px;
+      // display: none;
+      // margin-right: -100px;
+      width: 0;
+      transition: margin 2s ease-in-out;
+    }
   }
 
   &.open {
-    display: block;
-    margin-right: 0px;
+    .cartModal {
+      top: 0;
+      right: 0;
+      // display: block;
+      // margin-right: 0px;
+      width: 300px;
+    }
   }
 }
