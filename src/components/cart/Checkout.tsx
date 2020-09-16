@@ -99,7 +99,7 @@ export default function Checkout({
             send payment to the following:
             <br />
             @lazybonescoffeeco
-            <form>
+            <form data-netlify="true">
               <input
                 type="text"
                 name="userName"
