@@ -49,7 +49,7 @@ export default function Checkout({
 
   const formatOrder = () => {
     items.map((item: any) => {
-      `${item.name} : ${item.price} \r \n`;
+      return `${item.name} : ${item.price} \r \n`;
     });
   };
 
