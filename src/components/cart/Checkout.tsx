@@ -18,6 +18,7 @@ export default function Checkout({
   const [user, setUser] = useState({
     userName: false,
     venmo: false,
+    email: '',
     address: '',
     zipcode: '',
   });
@@ -49,7 +50,9 @@ export default function Checkout({
   const emailTemplate = {
     name: 'Test',
     email: 'cox.jonathan@gmail.com',
-    message: 'coffee time!',
+    message: `${user.userName} \n ${user.email}, ${user.address} - ${
+      user.zipcode
+    } \n ${JSON.stringify(items)}`,
   };
 
   const submitData = () => {
@@ -104,6 +107,13 @@ export default function Checkout({
                 type="text"
                 name="userName"
                 placeholder="name"
+                onChange={(e) => handleChange(e)}
+              />
+              <br />
+              <input
+                type="text"
+                name="email"
+                placeholder="email"
                 onChange={(e) => handleChange(e)}
               />
               <br />
