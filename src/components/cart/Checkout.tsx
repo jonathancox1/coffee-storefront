@@ -48,8 +48,8 @@ export default function Checkout({
   };
 
   const formatOrder = () => {
-    items.map((item: any) => {
-      return `${item.name} : ${item.price} \r \n`;
+    return items.map((item: any) => {
+      return `${item.name} - $${item.price} \r \n`;
     });
   };
 
@@ -58,10 +58,11 @@ export default function Checkout({
     email: 'cox.jonathan@gmail.com',
     message: `${user.userName} \r \n ${user.email}, ${user.address} - ${
       user.zipcode
-    } \r \n ${JSON.stringify(formatOrder())}`,
+    } \r \n ${formatOrder().toString()} Total: $${generateSubTotal()}`,
   };
 
   const submitData = () => {
+    console.log(emailTemplate);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
