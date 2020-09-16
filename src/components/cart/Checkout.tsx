@@ -47,12 +47,18 @@ export default function Checkout({
       .join('&');
   };
 
+  const formatOrder = () => {
+    items.map((item: any) => {
+      `${item.name} : ${item.price} \r \n`;
+    });
+  };
+
   const emailTemplate = {
     name: 'Test',
     email: 'cox.jonathan@gmail.com',
-    message: `${user.userName} \n ${user.email}, ${user.address} - ${
+    message: `${user.userName} \r \n ${user.email}, ${user.address} - ${
       user.zipcode
-    } \n ${JSON.stringify(items)}`,
+    } \r \n ${JSON.stringify(formatOrder())}`,
   };
 
   const submitData = () => {

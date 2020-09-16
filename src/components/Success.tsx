@@ -15,6 +15,7 @@ export default function Success() {
       <Link to="/" className="returnLink">
         Return home
       </Link>
+      <br />
       <span className="emoji" role="img" aria-label="emoji coffee">
         ☕
       </span>
