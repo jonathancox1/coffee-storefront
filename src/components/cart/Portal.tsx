@@ -10,7 +10,7 @@ interface IPortalProps {
 export default function Portal({ children }: IPortalProps) {
   const modalRoot = document.getElementById('modal-root')!;
   return ReactDOM.createPortal(
-    <div className="testDiv">{children}</div>,
+    <div className="portal">{children}</div>,
     modalRoot,
   );
 }

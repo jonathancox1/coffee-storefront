@@ -41,7 +41,7 @@
 
     .cartItemsWrapper {
       display: grid;
-      grid-template-columns: 1fr 25px;
+      grid-template-columns: 1fr 30px;
       justify-content: center;
       margin: 30px 0;
       font-size: 16px;
@@ -145,20 +145,12 @@
   }
 }
 
-.testDiv {
+.portal {
   width: 100vw;
   height: 100vh;
-  // background-color: white;
   z-index: 1001;
   position: absolute;
-  // margin: 0 5%;
   top: 0;
   justify-content: center;
   user-select: none;
-  // border: 2px solid grey;
-  // box-shadow: rgba(0, 0, 0, 0.22) 0px 5px 43px, rgba(0, 0, 0, 0.18) 0px 4px 11px;
-
-  // width: 300px;
-  // height: 400px;
-  // border: 2px solid black;
 }

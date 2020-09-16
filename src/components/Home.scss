@@ -1,6 +1,6 @@
 .pageWrapper {
   box-sizing: border-box;
-  //   width: 100vw;
+  width: 100vw;
   // height: 100vh;
   user-select: none;
 
@@ -23,13 +23,13 @@
     .title {
       display: flex;
       font-size: 25px;
-      margin-left: 10px;
+      margin-left: 20px;
       align-self: center;
     }
 
     .button {
       float: right;
-      margin: 15px 40px;
+      margin: 15px 20px;
       outline: none;
       border: none;
       background-color: transparent;
