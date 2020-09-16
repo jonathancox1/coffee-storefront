@@ -56,7 +56,7 @@ export default function Checkout({
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', emailTemplate }),
+      body: encode({ 'form-name': 'contact', ...emailTemplate }),
     })
       .then(() => {
         history.push('/success');
