@@ -6,6 +6,7 @@ import Coffees from './offerings/Coffees';
 import Checkout from './cart/Checkout';
 
 import './Home.scss';
+import Portal from './cart/Portal';
 
 export default function Home() {
   const [cartStatus, setStatus] = useState<boolean>(false);
@@ -48,11 +49,15 @@ export default function Home() {
           updateItems={setItems}
           goToCheckout={setCheckout}
         />
-        <Checkout
-          clickedOpen={checkoutStatus}
-          closeCheckout={setCheckout}
-          items={currentItems}
-        />
+        {checkoutStatus && (
+          <Portal>
+            <Checkout
+              clickedOpen={checkoutStatus}
+              closeCheckout={setCheckout}
+              items={currentItems}
+            />
+          </Portal>
+        )}
       </div>
       <Coffees addToCart={addToCart} />
     </div>

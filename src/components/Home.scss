@@ -1,14 +1,14 @@
 .pageWrapper {
   box-sizing: border-box;
   //   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   user-select: none;
 
   &.checkoutOpen {
-    // -webkit-filter: blur(1px);
-    // -moz-filter: blur(1px);
-    // -o-filter: blur(1px);
-    // -ms-filter: blur(1px);
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
     // filter: grayscale(90%) opacity(25%);
   }
 
@@ -29,7 +29,7 @@
 
     .button {
       float: right;
-      margin: 15px;
+      margin: 15px 40px;
       outline: none;
       border: none;
       background-color: transparent;
