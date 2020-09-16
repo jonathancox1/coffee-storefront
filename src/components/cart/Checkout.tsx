@@ -38,10 +38,32 @@ export default function Checkout({
     setUser({ ...user, [itemToUpdate]: e.target.value });
   };
 
+  const encode = (data: any) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]),
+      )
+      .join('&');
+  };
+
+  const emailTemplate = {
+    name: 'Test',
+    email: 'cox.jonathan@gmail.com',
+    message: 'coffee time!',
+  };
+
   const submitData = () => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', emailTemplate }),
+    })
+      .then(() => {
+        history.push('/success');
+      })
+      .catch((error) => console.log(error));
     // todo send to api
     // user data to api to generate order
-    history.push('/success');
   };
 
   return (
