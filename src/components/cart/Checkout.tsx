@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import './Checkout.scss';
 
@@ -23,7 +22,6 @@ export default function Checkout({
     address: '',
     zipcode: '',
   });
-  const history = useHistory();
 
   const goBack = () => {
     closeCheckout(false);
