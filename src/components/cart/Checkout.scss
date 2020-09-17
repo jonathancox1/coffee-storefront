@@ -153,10 +153,10 @@
 
 .portal {
   width: 100vw;
-  height: 100vh;
-  z-index: 1001;
+  // height: 100vh;
+  // z-index: 1001;
   position: absolute;
-  top: -50px;
+  top: 0px;
   justify-content: center;
   user-select: none;
 }
