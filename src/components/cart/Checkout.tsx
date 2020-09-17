@@ -19,6 +19,7 @@ export default function Checkout({
     userName: false,
     venmo: false,
     email: '',
+    phone: '',
     address: '',
     zipcode: '',
   });
@@ -42,7 +43,13 @@ export default function Checkout({
   };
 
   const isValid = () => {
-    if (user.userName && user.zipcode && user.address && user.email) {
+    if (
+      user.userName &&
+      user.zipcode &&
+      user.address &&
+      user.email &&
+      user.phone
+    ) {
       toggleCheck(true);
       return true;
     } else {
@@ -68,6 +75,7 @@ export default function Checkout({
   const emailTemplate = {
     name: `${user.userName}`,
     email: `${user.email}`,
+    phone: `${user.phone}`,
     message: `${user.address} - ${
       user.zipcode
     } \r \n ${formatOrder().toString()} Total: $${generateSubTotal()}`,
@@ -90,7 +98,7 @@ export default function Checkout({
         // );
 
         window.location.assign(
-          `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=cox%2ejonathan%40gmail%2ecom&lc=US&item_name=coffee%20time&amount=${generateSubTotal()}%2e00&currency_code=USD&button_subtype=services&tax_rate=0%2e000&shipping=0%2e00&bn=PP%2dBuyNowBF%3abtn_buynowCC_LG%2egif%3aNonHosted`,
+          `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=T3MJURQ352E2C&lc=US&item_name=coffee&amount=${generateSubTotal()}&currency_code=USD&button_subtype=services&bn=PP%2dBuyNowBF%3abtn_buynowCC_LG%2egif%3aNonHosted`,
         );
       })
       .catch((error) => console.log(error));
@@ -143,6 +151,14 @@ export default function Checkout({
                 type="text"
                 name="email"
                 placeholder="email"
+                onChange={(e) => handleChange(e)}
+                required
+              />
+              <label>Phone</label>
+              <input
+                type="text"
+                name="phone"
+                placeholder="phone"
                 onChange={(e) => handleChange(e)}
                 required
               />
