@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className={`pageWrapper ${checkoutStatus && 'checkoutOpen'}`}>
       <div className="header">
-        <div className="title">Coffee Company</div>
+        <div className="title">Lazy Bones Coffee Company</div>
         <div>
           <div className="count">{currentItems.length}</div>
           <button

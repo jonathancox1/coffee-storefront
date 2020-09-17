@@ -126,8 +126,8 @@ export default function Checkout({
             <div className="calcTotal">${generateSubTotal()}</div>
           </div>
           <div className="paymentDetails">
-            <div className="paymentHeading">Payment Details</div>
-            all payments are collected through PayPal
+            <div className="paymentHeading">Details</div>
+            Payments are collected through PayPal
             <br />
             <br />
             <form data-netlify="true">
@@ -172,7 +172,7 @@ export default function Checkout({
             type="submit"
             onClick={() => submitData()}
           >
-            Complete Order
+            Continue to Paypal
           </button>
         </div>
       </div>

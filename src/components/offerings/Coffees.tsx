@@ -14,28 +14,16 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
     // TODO call API get current offerings
     setOfferings([
       {
-        name: 'Ethiopia Geta Bore',
-        price: 13,
+        name: 'Old Timer - Blend',
+        price: 10,
         description:
-          'Geta Bore has unique, resiny-sweet aromatics, pine and amber resin, caramel, cinnamon bark and a yellow custard note. Dark roasts yield syrupy chocolate flavors. City+ to Full City+. Good for espresso.',
+          'Our take on a classic medium roast profile, a revolving blend of Central and South American beans. Old Timer brews a sweet and smooth cup with flavors of chocolate and nuts. Currently 50% El Salvador 50% Guatemala',
       },
       {
-        name: 'Kenya Nyeri Ichamama AB',
-        price: 16,
+        name: 'Kenya - Kiambu Peaberry',
+        price: 14,
         description:
-          'Grabby citrus flavors like pink grapefruit and kumquat are buttressed by panela and caramelizing sugar sweetness, and a hint of cranberry sauce. Shimmering acidity. City to Full City.',
-      },
-      {
-        name: 'Panama Volcan Baru Estate',
-        price: 12,
-        description:
-          'A crowd pleasing cup, notes of almond biscotti, caramel, rice cake, macadamia and walnut, chocolate graham cracker and a tannic vibrance that has a mouth feel of matcha powder. City+ to Full City+. Good for espresso.',
-      },
-      {
-        name: 'New Classic Blend',
-        price: 11,
-        description:
-          'A classic, balanced espresso, but without the baggage of the old world espresso conventions ...and without robusta! The espresso has balanced bittersweet notes, thick and opaque body, almond and chocolate roast flavors, hints of peach tea, spice, jasmine.',
+          'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
       },
     ]);
   }, []);
