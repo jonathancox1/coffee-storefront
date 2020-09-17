@@ -89,7 +89,6 @@ export default function Checkout({
       .then(() => {
         window.open(
           `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=cox%2ejonathan%40gmail%2ecom&lc=US&item_name=coffee%20time&amount=${generateSubTotal()}%2e00&currency_code=USD&button_subtype=services&tax_rate=0%2e000&shipping=0%2e00&bn=PP%2dBuyNowBF%3abtn_buynowCC_LG%2egif%3aNonHosted`,
-          '_blank',
         );
 
         history.push('/success');
