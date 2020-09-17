@@ -15,6 +15,7 @@ export default function Checkout({
   items,
 }: ICheckoutProps) {
   const [check, toggleCheck] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
   const [user, setUser] = useState({
     userName: false,
     venmo: false,
@@ -35,8 +36,21 @@ export default function Checkout({
   };
 
   const handleChange = (e: any) => {
+    if (isValid()) {
+      setError('');
+    }
     const itemToUpdate: any = e.target.name;
     setUser({ ...user, [itemToUpdate]: e.target.value });
+  };
+
+  const isValid = () => {
+    if (user.userName && user.zipcode && user.address && user.email) {
+      toggleCheck(true);
+      return true;
+    } else {
+      toggleCheck(false);
+      return false;
+    }
   };
 
   const encode = (data: any) => {
@@ -54,14 +68,18 @@ export default function Checkout({
   };
 
   const emailTemplate = {
-    name: 'Test',
-    email: 'cox.jonathan@gmail.com',
-    message: `${user.userName} \r \n ${user.email}, ${user.address} - ${
+    name: `${user.userName}`,
+    email: `${user.email}`,
+    message: `${user.address} - ${
       user.zipcode
     } \r \n ${formatOrder().toString()} Total: $${generateSubTotal()}`,
   };
 
   const submitData = () => {
+    if (!isValid()) {
+      setError('Somethings missing :(');
+      return;
+    }
     console.log(emailTemplate);
     fetch('/', {
       method: 'POST',
@@ -69,6 +87,11 @@ export default function Checkout({
       body: encode({ 'form-name': 'contact', ...emailTemplate }),
     })
       .then(() => {
+        window.open(
+          `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=cox%2ejonathan%40gmail%2ecom&lc=US&item_name=coffee%20time&amount=${generateSubTotal()}%2e00&currency_code=USD&button_subtype=services&tax_rate=0%2e000&shipping=0%2e00&bn=PP%2dBuyNowBF%3abtn_buynowCC_LG%2egif%3aNonHosted`,
+          '_blank',
+        );
+
         history.push('/success');
       })
       .catch((error) => console.log(error));
@@ -104,66 +127,49 @@ export default function Checkout({
           </div>
           <div className="paymentDetails">
             <div className="paymentHeading">Payment Details</div>
-            all payments are collected through Venmo only
+            all payments are collected through PayPal
             <br />
-            send payment to the following:
             <br />
-            @lazybonescoffeeco
             <form data-netlify="true">
+              <label>Name</label>
               <input
                 type="text"
                 name="userName"
                 placeholder="name"
                 onChange={(e) => handleChange(e)}
+                required
               />
-              <br />
+              <label>Email</label>
               <input
                 type="text"
                 name="email"
                 placeholder="email"
                 onChange={(e) => handleChange(e)}
+                required
               />
-              <br />
+              <label>Address</label>
               <input
                 type="text"
                 name="address"
                 placeholder="street address"
                 onChange={(e) => handleChange(e)}
+                required
               />
+              <label>Zip Code</label>
               <input
                 type="text"
                 name="zipcode"
                 placeholder="zipcode"
                 onChange={(e) => handleChange(e)}
+                required
               />
-              <br />
-              <input
-                type="text"
-                name="venmo"
-                placeholder="venmo account name"
-                onChange={(e) => handleChange(e)}
-              />
-              <br />
-              <input
-                className="checkbox"
-                type="checkbox"
-                name="agreement"
-                onClick={() => toggleCheck((check) => !check)}
-                disabled={
-                  !user.userName ||
-                  !user.venmo ||
-                  !user.address ||
-                  !user.zipcode
-                }
-              />
-              <label htmlFor="agreement">
-                I have submitted and completed the venmo payment process
-              </label>
             </form>
+            <div className="error">{error}</div>
           </div>
           <button
             className="finalCheckout"
             disabled={!check}
+            type="submit"
             onClick={() => submitData()}
           >
             Complete Order

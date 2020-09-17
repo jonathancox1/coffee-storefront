@@ -3,6 +3,7 @@
   width: 100vw;
   // height: 100vh;
   user-select: none;
+  margin-top: 0;
 
   &.checkoutOpen {
     -webkit-filter: blur(1px);
@@ -13,12 +14,17 @@
   }
 
   .header {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: grid;
     grid-template-columns: 1fr auto;
     width: 100%;
     height: 100px;
     background: lightgray;
-    align-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px,
+      rgba(0, 0, 0, 0.18) 0px 4px 11px;
 
     .title {
       display: flex;
@@ -27,9 +33,25 @@
       align-self: center;
     }
 
+    .count {
+      text-align: center;
+      padding: 2px;
+      display: block;
+      position: relative;
+      left: 10px;
+      top: 50px;
+      background-color: white;
+      width: 22px;
+      height: 22px;
+      border-radius: 100px;
+      align-items: center;
+      z-index: 2;
+      border: 1px solid grey;
+    }
+
     .button {
       float: right;
-      margin: 15px 20px;
+      margin: 0 20px;
       outline: none;
       border: none;
       background-color: transparent;
@@ -38,7 +60,8 @@
       width: 50px;
       height: 50px;
       justify-content: center;
-      align-content: center;
+      align-self: center;
+      padding-bottom: 30px;
 
       &.showButton {
         display: block;
@@ -49,20 +72,40 @@
       }
 
       .cartImage {
-        width: 30px;
-        margin-right: 5px;
-        transition: transform 0.5s ease-in-out;
+        // position: absolute;
+        z-index: 1;
+        // width: 30px;
+        // margin-right: 5px;
+        transition: all 0.2s;
+        // position: relative;
+
+        // &.grow {
+        //   transform: rotate(1turn);
+        // }
 
         &.grow {
-          transform: rotate(1turn);
+          // transform: translateY(2px);
+          // box-shadow: 0 5px 10px rgba(black, 0.2);
+          transform: scaleX(1.4) scaleY(1.4);
+
+          .grow::after {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            // position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 0.2s;
+          }
         }
       }
 
-      &:hover {
-        border: 1px solid black;
-        height: 50px;
-        width: 50px;
-      }
+      // &:hover {
+      //   border: 1px solid black;
+      //   height: 50px;
+      //   width: 50px;
+      // }
     }
   }
 }

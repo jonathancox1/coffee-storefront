@@ -32,16 +32,20 @@ export default function Home() {
     <div className={`pageWrapper ${checkoutStatus && 'checkoutOpen'}`}>
       <div className="header">
         <div className="title">Coffee Company</div>
-        <button
-          onClick={() => openCart()}
-          className={`button ${!cartStatus ? 'showButton' : 'hideButton'}`}
-        >
-          <img
-            className={`cartImage ${grow && 'grow'}`}
-            src={cart}
-            alt="shopping cart"
-          />
-        </button>
+        <div>
+          <div className="count">{currentItems.length}</div>
+          <button
+            onClick={() => openCart()}
+            className={`button ${!cartStatus ? 'showButton' : 'hideButton'}`}
+          >
+            <img
+              className={`cartImage ${grow && 'grow'}`}
+              src={cart}
+              alt="shopping cart"
+            />
+          </button>
+        </div>
+
         <Cart
           clickedOpen={cartStatus}
           updateOpen={setStatus}

@@ -95,19 +95,25 @@
 
     .paymentDetails {
       text-align: center;
+      justify-content: center;
+      margin: 0 auto;
 
       .paymentHeading {
         font-size: 18px;
         font-weight: 600;
       }
 
-      input {
-        width: 150px;
-        margin: 5px 5px;
+      form {
+        display: grid;
+        grid-template-columns: auto 2fr;
+        grid-gap: 15px;
+        min-width: 50%;
+        max-width: 500px;
+        margin: 0 auto;
+      }
 
-        &.checkbox {
-          width: 25px;
-        }
+      input {
+        width: 100%;
       }
     }
 
@@ -150,7 +156,7 @@
   height: 100vh;
   z-index: 1001;
   position: absolute;
-  top: 0;
+  top: -50px;
   justify-content: center;
   user-select: none;
 }
