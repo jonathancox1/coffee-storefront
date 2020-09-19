@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import CoffeeCard from './CoffeeCard';
-import Shipping from '../Shipping';
-import About from '../About';
 
 import './Coffees.scss';
 

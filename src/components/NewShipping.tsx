@@ -6,10 +6,6 @@ import contact from '../assets/contact.svg';
 import './NewShipping.scss';
 
 export default function NewShipping() {
-  const windowScroll = () => {
-    window.scrollTo({ top: 320, behavior: 'smooth' });
-  };
-
   return (
     <div className="newShipWrap">
       <div className="textBox">
