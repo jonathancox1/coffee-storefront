@@ -30,9 +30,11 @@ export default function NewShipping() {
       <hr />
       <br />
       <div className="textBox">
-        <div className="headingMessage">
-          We love coffee and are happy to share our passion with you. We work
-          hard to source excellent coffee that is both unique and sustainable.
+        <div className="headingMessage1">
+          We love coffee and are happy to share our passion with you.
+          <br />
+          We work hard to source excellent coffee that is both unique and
+          sustainable.
           <br />
           <img src={contact} alt="contact icon" />
         </div>
