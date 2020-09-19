@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
 import cart from '../assets/cart.svg';
+import arrowup from '../assets/arrowup.svg';
 import Cart from './cart/Cart';
 import Coffees from './offerings/Coffees';
 import Checkout from './cart/Checkout';
-
+import Welcome from './Welcome';
 import './Home.scss';
 import Portal from './cart/Portal';
 
@@ -13,6 +14,20 @@ export default function Home() {
   const [checkoutStatus, setCheckout] = useState<boolean>(false);
   const [grow, toggleGrow] = useState<boolean>(false);
   const [currentItems, setItems] = useState<{}[]>([]);
+  const [showScroll, setShowScroll] = useState<boolean>(false);
+
+  const checkScrollToTop = () => {
+    if (!showScroll && window.pageYOffset > 750) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 750) {
+      setShowScroll(false);
+    }
+  };
+  window.addEventListener('scroll', checkScrollToTop);
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const openCart = () => {
     // show cart modal
@@ -25,13 +40,13 @@ export default function Home() {
     toggleGrow(true);
     setTimeout(() => {
       toggleGrow(false);
-    }, 1000);
+    }, 400);
   };
 
   return (
     <div className={`pageWrapper ${checkoutStatus && 'checkoutOpen'}`}>
       <div className="header">
-        <div className="title">Lazy Bones Coffee Company</div>
+        <div className="title">Lazy Bones</div>
         <div>
           <div className="count">{currentItems.length}</div>
           <button
@@ -63,7 +78,16 @@ export default function Home() {
           </Portal>
         )}
       </div>
+      <Welcome />
       <Coffees addToCart={addToCart} />
+      {/* <About />
+      <Shipping /> */}
+      <div
+        onClick={() => scrollTop()}
+        className={`scrollToTop ${showScroll ? 'show' : 'hide'}`}
+      >
+        <img src={arrowup} alt="arrow up" />
+      </div>
     </div>
   );
 }

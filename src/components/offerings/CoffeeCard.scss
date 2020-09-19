@@ -8,11 +8,61 @@
   box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px,
     rgba(0, 0, 0, 0.18) 0px 4px 11px;
 
+  &.purple {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      170deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(192, 27, 192, 0.464) 0%,
+      rgba(151, 0, 255, 1) 100%
+    );
+  }
+
+  &.brown {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      170deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(121, 57, 9, 0.4640231092436975) 0%,
+      rgba(47, 21, 5, 0.8) 100%
+    );
+  }
+
+  &.red {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      170deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(222, 50, 50, 0.4640231092436975) 0%,
+      rgba(226, 225, 0, 1) 100%
+    );
+  }
+
+  &.green {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      170deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(50, 222, 164, 0.4640231092436975) 0%,
+      rgba(147, 226, 0, 1) 100%
+    );
+  }
+
+  &.blue {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      170deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(50, 139, 222, 0.4640231092436975) 0%,
+      rgba(0, 226, 161, 1) 100%
+    );
+  }
+
   .cardName {
     font-size: 20px;
     font-weight: 600;
     line-height: 20px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid black;
   }
 
   .cardPrice {
@@ -32,6 +82,24 @@
 
     button {
       cursor: pointer;
+      outline: none;
+      border: 1px solid white;
+      border-radius: 5px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: black;
+        box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px,
+          rgba(0, 0, 0, 0.18) 0px 4px 11px;
+      }
+
+      &:active {
+        box-shadow: rgba(0, 0, 0, 0.22) 0px 4px 23px,
+          rgba(0, 0, 0, 0.18) 0px 2px 8px;
+        transform: translateY(1px);
+        width: 99%;
+        height: 99%;
+      }
     }
   }
 }

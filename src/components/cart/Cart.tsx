@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import trash from '../../assets/trash.svg';
+import exit from '../../assets/exit.svg';
 
 import './Cart.scss';
 
@@ -51,6 +52,7 @@ export default function Cart({
       goToCheckout(true);
       setOpen(false);
       updateOpen(false);
+      window.scrollTo({ top: 100, behavior: 'smooth' });
     }
   };
 
@@ -60,7 +62,7 @@ export default function Cart({
         <div className="cartHeader">
           Your Cart
           <button onClick={() => closeCart()} className="closeButton">
-            X
+            <img src={exit} alt="close cart" />
           </button>
         </div>
         <div className="cartBody">

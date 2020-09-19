@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import exit from '../../assets/exit.svg';
+
 import './Checkout.scss';
 
 interface ICheckoutProps {
@@ -13,6 +15,7 @@ export default function Checkout({
   closeCheckout,
   items,
 }: ICheckoutProps) {
+  const [shipping, setShipping] = useState<boolean>(false);
   const [check, toggleCheck] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
   const [user, setUser] = useState({
@@ -31,6 +34,9 @@ export default function Checkout({
   const generateSubTotal = () => {
     let tempTotal = 0;
     items.forEach((item: any) => (tempTotal = tempTotal + item.price));
+    if (shipping) {
+      tempTotal += 10;
+    }
     return tempTotal;
   };
 
@@ -113,7 +119,7 @@ export default function Checkout({
           <div className="checkoutHeader">
             <div className="checkoutTitle">Checkout</div>
             <button className="exitCheckout" onClick={() => goBack()}>
-              X
+              <img src={exit} alt="exit checkout" />
             </button>
           </div>
           <div className="cartItemsWrapper">
@@ -121,14 +127,18 @@ export default function Checkout({
               items.map((item: any) => {
                 return (
                   <>
-                    <div className="itemName">{item.name}</div>
+                    <div className="itemName">
+                      <div className="weight">1/2 lb</div>
+                      {item.name}
+                    </div>
                     <div className="itemPrice">${item.price}</div>
                   </>
                 );
               })}
 
-            <div className="subtotalText"></div>
-            <div className="subtotal"></div>
+            <div className="subtotalText">Shipping</div>
+            <div className="subtotal">{shipping ? '$10' : '-'}</div>
+
             <div className="totalText">Total</div>
             <div className="calcTotal">${generateSubTotal()}</div>
           </div>
@@ -136,6 +146,15 @@ export default function Checkout({
             <div className="paymentHeading">Details</div>
             Payments are collected through PayPal
             <br />
+            Contact Us with questions{' '}
+            <a href="mailto:lazybonescoffee@gmail.com">here</a>
+            <div className="shippingText">
+              Now offering flat rate shipping
+              <br />
+              If you are outside of the <b>metro atlanta</b> area
+              <br />
+              please check the box for shipping
+            </div>
             <br />
             <form data-netlify="true">
               <label>Name</label>
@@ -176,6 +195,15 @@ export default function Checkout({
                 name="zipcode"
                 placeholder="zipcode"
                 onChange={(e) => handleChange(e)}
+                required
+              />
+              <label>Shipping</label>
+              <input
+                type="checkbox"
+                name="state"
+                placeholder="state"
+                onChange={(e) => setShipping((current) => !current)}
+                className="stateBox"
                 required
               />
             </form>

@@ -1,0 +1,55 @@
+.welcomeWrap {
+  margin: 0 auto 30px;
+  padding-top: 120px;
+  max-width: 440px;
+  height: 300px;
+  background-color: turquoise;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../assets/waves.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: auto 200px;
+
+  .textBox {
+    margin: 20px auto;
+    width: 50%;
+    height: 250px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 2fr 20px 10px;
+
+    .headingMessage {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .subMessage {
+      padding: 5px 0;
+    }
+
+    .secondaryMessage {
+      font-size: 14px;
+      margin: auto 0;
+    }
+
+    .arrow {
+      .arrowDown {
+        height: 25px;
+        opacity: 0.2;
+        transition: all 0.2s ease-in-out;
+        z-index: -1;
+
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .waves {
+    width: 100%;
+  }
+}

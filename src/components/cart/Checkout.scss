@@ -1,7 +1,8 @@
 .checkoutWrapper {
   min-width: 70vw;
   width: 90vw;
-  height: 80vh;
+  min-height: 90vh;
+  height: 100%;
   background-color: white;
   z-index: 1001;
   position: absolute;
@@ -9,6 +10,12 @@
   justify-content: center;
   border: 2px solid grey;
   box-shadow: rgba(0, 0, 0, 0.22) 0px 5px 43px, rgba(0, 0, 0, 0.18) 0px 4px 11px;
+
+  @media (min-width: 500px) {
+    width: 60%;
+    height: 100%;
+    margin: 120px 20%;
+  }
 
   .checkoutModal {
     justify-content: center;
@@ -32,9 +39,19 @@
         outline: none;
         border: 1px solid transparent;
         cursor: pointer;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
 
-        &:hover {
-          border: 1px solid black;
+        img {
+          height: 30px;
+          transition: all 0.2s;
+          margin: auto;
+
+          &:hover {
+            transform: scale(1.2);
+          }
         }
       }
     }
@@ -50,6 +67,13 @@
       }
 
       .itemName {
+        .weight {
+          font-size: 10px;
+          display: inline;
+          letter-spacing: -0.5px;
+          margin: auto 0;
+          padding-right: 3px;
+        }
         text-align: left;
       }
 
@@ -103,24 +127,33 @@
         font-weight: 600;
       }
 
+      .shippingText {
+        font-size: 12px;
+      }
+
       form {
         display: grid;
         grid-template-columns: auto 2fr;
         grid-gap: 15px;
         min-width: 50%;
         max-width: 500px;
-        margin: 0 auto;
+        margin: 0 auto 50px auto;
       }
 
       input {
         width: 100%;
       }
+
+      .stateBox {
+        // width: 3%;
+        float: left;
+      }
     }
 
     .finalCheckout {
-      position: absolute;
+      position: relative;
       justify-content: center;
-      bottom: 20px;
+      bottom: 0;
       left: 5%;
       width: 90%;
       height: 40px;
@@ -152,8 +185,10 @@
 }
 
 .portal {
-  width: 100vw;
-  // height: 100vh;
+  min-width: 70vw;
+  width: 90vw;
+  min-height: 80vh;
+  max-height: 100%;
   // z-index: 1001;
   position: absolute;
   top: 0px;
