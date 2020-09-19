@@ -82,6 +82,7 @@ export default function Checkout({
     name: `${user.userName}`,
     email: `${user.email}`,
     phone: `${user.phone}`,
+    shipping: `${shipping}`,
     message: `${user.address} - ${
       user.zipcode
     } \r \n ${formatOrder().toString()} Total: $${generateSubTotal()}`,
