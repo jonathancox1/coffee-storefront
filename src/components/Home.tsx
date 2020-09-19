@@ -8,6 +8,7 @@ import Checkout from './cart/Checkout';
 import Welcome from './Welcome';
 import './Home.scss';
 import Portal from './cart/Portal';
+import NewShipping from './NewShipping';
 
 export default function Home() {
   const [cartStatus, setStatus] = useState<boolean>(false);
@@ -80,14 +81,13 @@ export default function Home() {
       </div>
       <Welcome />
       <Coffees addToCart={addToCart} />
-      {/* <About />
-      <Shipping /> */}
       <div
         onClick={() => scrollTop()}
         className={`scrollToTop ${showScroll ? 'show' : 'hide'}`}
       >
         <img src={arrowup} alt="arrow up" />
       </div>
+      <NewShipping />
     </div>
   );
 }

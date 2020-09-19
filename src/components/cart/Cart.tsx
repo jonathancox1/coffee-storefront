@@ -49,10 +49,10 @@ export default function Cart({
       return;
     } else {
       // continue checkout
+      window.scrollTo({ top: 100, behavior: 'smooth' });
       goToCheckout(true);
       setOpen(false);
       updateOpen(false);
-      window.scrollTo({ top: 100, behavior: 'smooth' });
     }
   };
 

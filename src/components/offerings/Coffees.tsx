@@ -29,27 +29,27 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
           'Our take on a classic medium roast profile, a revolving blend of Central and South American beans. Old Timer brews a sweet and smooth cup with flavors of chocolate and nuts. Currently 50% El Salvador 50% Guatemala',
         color: 'brown',
       },
-      {
-        name: 'Kenya - Kiambu Peaberry',
-        price: 14,
-        description:
-          'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
-        color: 'red',
-      },
-      {
-        name: 'Kenya - Kiambu Peaberry',
-        price: 14,
-        description:
-          'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
-        color: 'green',
-      },
-      {
-        name: 'Kenya - Kiambu Peaberry',
-        price: 14,
-        description:
-          'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
-        color: 'blue',
-      },
+      // {
+      //   name: 'Kenya - Kiambu Peaberry',
+      //   price: 14,
+      //   description:
+      //     'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
+      //   color: 'red',
+      // },
+      // {
+      //   name: 'Kenya - Kiambu Peaberry',
+      //   price: 14,
+      //   description:
+      //     'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
+      //   color: 'green',
+      // },
+      // {
+      //   name: 'Kenya - Kiambu Peaberry',
+      //   price: 14,
+      //   description:
+      //     'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
+      //   color: 'blue',
+      // },
     ]);
   }, []);
 
@@ -58,9 +58,6 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
       {currentOfferings.map((offering: {}) => {
         return <CoffeeCard addToCart={addToCart} coffeeInfo={offering} />;
       })}
-
-      <Shipping />
-      <About />
     </div>
   );
 }
