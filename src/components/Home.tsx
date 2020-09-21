@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import cart from '../assets/cart.svg';
 import arrowup from '../assets/arrowup.svg';
@@ -43,6 +43,15 @@ export default function Home() {
       toggleGrow(false);
     }, 400);
   };
+
+  useEffect(() => {
+    const coffeeVersion = '1.01';
+    const local = localStorage.getItem('coffeeVersion');
+    if (local !== '1.01') {
+      window.location.reload(true);
+      localStorage.setItem('coffeeVersion', coffeeVersion);
+    }
+  }, []);
 
   return (
     <div className={`pageWrapper ${checkoutStatus && 'checkoutOpen'}`}>
