@@ -31,15 +31,15 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
           'Our take on a classic medium roast profile, a revolving blend of Central and South American beans. Old Timer brews a sweet and smooth cup with flavors of chocolate and nuts. Currently 50% El Salvador 50% Guatemala',
         color: 'brown',
       },
-      {
-        name: 'Ethiopia - Kochere',
-        price: 14,
-        soldOut: false,
-        comingSoon: true,
-        description:
-          'Light and bright, this washed coffee from the Yirgacheffe sub-region boasts delicate floral notes with a peach like sweetness. Coming Soon!',
-        color: 'red',
-      },
+      // {
+      //   name: 'Ethiopia - Kochere',
+      //   price: 14,
+      //   soldOut: false,
+      //   comingSoon: true,
+      //   description:
+      //     'Light and bright, this washed coffee from the Yirgacheffe sub-region boasts delicate floral notes with a peach like sweetness. Coming Soon!',
+      //   color: 'red',
+      // },
       // {
       //   name: 'Kenya - Kiambu Peaberry',
       //   price: 14,

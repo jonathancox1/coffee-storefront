@@ -45,9 +45,9 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const coffeeVersion = '1.01';
+    const coffeeVersion = '1.02';
     const local = localStorage.getItem('coffeeVersion');
-    if (local !== '1.01') {
+    if (local !== coffeeVersion) {
       window.location.reload(true);
       localStorage.setItem('coffeeVersion', coffeeVersion);
     }
