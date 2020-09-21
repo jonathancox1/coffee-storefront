@@ -16,7 +16,7 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
       {
         name: 'Kenya - Kiambu Peaberry',
         price: 14,
-        soldOut: false,
+        soldOut: true,
         comingSoon: false,
         description:
           'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
