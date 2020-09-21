@@ -2,6 +2,7 @@ import React from 'react';
 
 import shipping from '../assets/shipping.svg';
 import contact from '../assets/contact.svg';
+import coffee from '../assets/coffee.svg';
 
 import './NewShipping.scss';
 
@@ -27,6 +28,22 @@ export default function NewShipping() {
       <br />
       <br />
       <br />
+      <hr />
+      <br />
+      <div className="textBox">
+        <div className="headingMessage">
+          We're Roasting Weekly
+          <br />
+          <img src={coffee} alt="shipping icon" />
+        </div>
+        <div className="subMessage">
+          We roast on Saturdays
+          <br />
+          All orders placed after Friday evening will be roasted the following
+          week.
+        </div>
+        <div className="secondaryMessage"></div>
+      </div>
       <hr />
       <br />
       <div className="textBox">

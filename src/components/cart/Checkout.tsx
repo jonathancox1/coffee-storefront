@@ -198,7 +198,7 @@ export default function Checkout({
                 onChange={(e) => handleChange(e)}
                 required
               />
-              <label>Shipping</label>
+              <label>$10 Shipping</label>
               <input
                 type="checkbox"
                 name="state"

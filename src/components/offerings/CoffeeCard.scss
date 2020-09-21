@@ -87,6 +87,29 @@
       border-radius: 5px;
       transition: all 0.2s ease;
 
+      &.comingSoon {
+        display: none;
+      }
+
+      &.soldOut {
+        cursor: auto;
+        background-color: transparent;
+        border: 0.5px dashed rgb(138, 0, 0);
+        transform: rotate(-10deg);
+
+        &:hover {
+          box-shadow: none;
+          border: 0.5px dashed rgb(138, 0, 0);
+        }
+
+        .sorry {
+          color: rgb(138, 0, 0);
+          font-weight: 600;
+          font-size: 20px;
+          // transform: rotate(-10deg);
+        }
+      }
+
       &:hover {
         border-color: black;
         box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px,
@@ -96,7 +119,7 @@
       &:active {
         box-shadow: rgba(0, 0, 0, 0.22) 0px 4px 23px,
           rgba(0, 0, 0, 0.18) 0px 2px 8px;
-        transform: translateY(1px);
+        // transform: translateY(1px);
         width: 99%;
         height: 99%;
       }

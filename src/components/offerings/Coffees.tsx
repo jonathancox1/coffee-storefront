@@ -16,6 +16,8 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
       {
         name: 'Kenya - Kiambu Peaberry',
         price: 14,
+        soldOut: false,
+        comingSoon: false,
         description:
           'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
         color: 'purple',
@@ -23,9 +25,20 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
       {
         name: 'Old Timer - Blend',
         price: 10,
+        soldOut: false,
+        comingSoon: false,
         description:
           'Our take on a classic medium roast profile, a revolving blend of Central and South American beans. Old Timer brews a sweet and smooth cup with flavors of chocolate and nuts. Currently 50% El Salvador 50% Guatemala',
         color: 'brown',
+      },
+      {
+        name: 'Ethiopia - Kochere',
+        price: 14,
+        soldOut: false,
+        comingSoon: true,
+        description:
+          'Light and bright, this washed coffee from the Yirgacheffe sub-region boasts delicate floral notes with a peach like sweetness. Coming Soon!',
+        color: 'red',
       },
       // {
       //   name: 'Kenya - Kiambu Peaberry',
