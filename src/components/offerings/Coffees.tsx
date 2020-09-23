@@ -11,11 +11,18 @@ interface ICoffeeProps {
 
 export default function Coffees({ addToCart }: ICoffeeProps) {
   const [currentOfferings, setOfferings] = useState([{}]);
+  const [firebaseOffering, setFBOfferings] = useState([{}]);
+  const [isLoading, setIsLoading] = useState('true');
+
   useEffect(() => {
     // TODO call API get current offerings
-
-    const coffeeList = getCoffees();
-    setOfferings(coffeeList);
+    // const wait = async () => {
+    //   return await getCoffees();
+    // };
+    // wait().then((res) => {
+    //   setOfferings(res);
+    // });
+    // setOfferings(coffeeList);
     // setOfferings([
     //   {
     //     name: 'Kenya - Kiambu Peaberry',
@@ -68,11 +75,25 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
     // ]);
   }, []);
 
+  useEffect(() => {
+    setOfferings(getCoffees());
+  }, []);
+
+  // useEffect(() => {
+  //   const coffee = localStorage.getItem('coffees');
+  //   console.log(coffee);
+  //   if (coffee !== null) {
+  //     setOfferings(JSON.parse(coffee));
+  //   }
+  // }, []);
+
   return (
     <div className="coffeeWrapper">
-      {currentOfferings.map((offering: {}) => {
-        return <CoffeeCard addToCart={addToCart} coffeeInfo={offering} />;
-      })}
+      {currentOfferings.length <= 1 && 'Loading the freshest coffees...'}
+      {currentOfferings.length > 1 &&
+        currentOfferings.map((offering: {}) => {
+          return <CoffeeCard addToCart={addToCart} coffeeInfo={offering} />;
+        })}
     </div>
   );
 }

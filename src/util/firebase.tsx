@@ -12,7 +12,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
 const database = firebase.firestore();
 
 export const getCoffees = () => {
@@ -20,8 +19,7 @@ export const getCoffees = () => {
   database
     .collection('coffee')
     .get()
-    .then((res) =>
-      res.docs.forEach((coffee) => coffeeList.push(coffee.data())),
-    );
+    .then((res) => res.docs.forEach((coffee) => coffeeList.push(coffee.data())))
+    .then((res) => localStorage.setItem('coffees', JSON.stringify(coffeeList)));
   return coffeeList;
 };
