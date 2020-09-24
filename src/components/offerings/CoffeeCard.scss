@@ -94,7 +94,7 @@
       &.soldOut {
         cursor: auto;
         background-color: transparent;
-        border: 0.5px dashed rgb(138, 0, 0);
+        border: 2px dashed rgb(138, 0, 0);
         transform: rotate(-10deg);
 
         &:hover {
