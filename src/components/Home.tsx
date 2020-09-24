@@ -8,7 +8,9 @@ import Checkout from './cart/Checkout';
 import Welcome from './Welcome';
 import './Home.scss';
 import Portal from './cart/Portal';
+import CardPortal from './cart/CardPortal';
 import NewShipping from './NewShipping';
+import CoffeeCardExtended from './offerings/CoffeeCardExtended';
 
 export default function Home() {
   const [cartStatus, setStatus] = useState<boolean>(false);
@@ -16,6 +18,8 @@ export default function Home() {
   const [grow, toggleGrow] = useState<boolean>(false);
   const [currentItems, setItems] = useState<{}[]>([]);
   const [showScroll, setShowScroll] = useState<boolean>(false);
+  const [moreInfo, setMoreInfo] = useState<boolean>(false);
+  const [selectedCoffee, setSelectedCoffee] = useState<{}>({});
 
   const checkScrollToTop = () => {
     if (!showScroll && window.pageYOffset > 750) {
@@ -30,10 +34,20 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const scrollToCard = () => {
+    window.scrollTo({ top: 25, behavior: 'smooth' });
+  };
+
   const openCart = () => {
     // show cart modal
     setStatus(true);
   };
+
+  useEffect(() => {
+    if (moreInfo) {
+      scrollToCard();
+    }
+  }, [moreInfo]);
 
   const addToCart = (itemToAdd: {}) => {
     const updatedCart = [...currentItems, itemToAdd];
@@ -89,7 +103,20 @@ export default function Home() {
         )}
       </div>
       <Welcome />
-      <Coffees addToCart={addToCart} />
+      <Coffees
+        addToCart={addToCart}
+        whichCoffee={setSelectedCoffee}
+        moreInfo={setMoreInfo}
+      />
+      {moreInfo && (
+        <CardPortal>
+          <CoffeeCardExtended
+            addToCart={addToCart}
+            coffeeInfo={selectedCoffee}
+            moreInfo={setMoreInfo}
+          />
+        </CardPortal>
+      )}
       <div
         onClick={() => scrollTop()}
         className={`scrollToTop ${showScroll ? 'show' : 'hide'}`}

@@ -6,9 +6,15 @@ import './Coffees.scss';
 
 interface ICoffeeProps {
   addToCart: (itemToAdd: {}) => void;
+  whichCoffee: (selectedCoffee: {}) => void;
+  moreInfo: (moreInfo: boolean) => void;
 }
 
-export default function Coffees({ addToCart }: ICoffeeProps) {
+export default function Coffees({
+  addToCart,
+  whichCoffee,
+  moreInfo,
+}: ICoffeeProps) {
   const [currentOfferings, setOfferings] = useState([{}]);
   useEffect(() => {
     // TODO call API get current offerings
@@ -74,7 +80,14 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
   return (
     <div className="coffeeWrapper">
       {currentOfferings.map((offering: {}) => {
-        return <CoffeeCard addToCart={addToCart} coffeeInfo={offering} />;
+        return (
+          <CoffeeCard
+            addToCart={addToCart}
+            coffeeInfo={offering}
+            whichCoffee={whichCoffee}
+            moreInfo={moreInfo}
+          />
+        );
       })}
     </div>
   );
