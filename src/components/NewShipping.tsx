@@ -26,8 +26,6 @@ export default function NewShipping() {
       <br />
       <br />
       <br />
-      <br />
-      <br />
       <hr />
       <br />
       <div className="textBox">

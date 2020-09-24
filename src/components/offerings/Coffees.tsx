@@ -14,13 +14,13 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
     // TODO call API get current offerings
     setOfferings([
       {
-        name: 'Kenya - Kiambu Peaberry',
+        name: 'Ethiopia - Kochere',
         price: 14,
-        soldOut: true,
+        soldOut: false,
         comingSoon: false,
         description:
-          'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
-        color: 'purple',
+          'Light and bright, this washed coffee from the Yirgacheffe sub-region offers the typical clean flavors Ethiopian coffee is known for.  This heirloom variety boasts delicate floral notes with a peach like sweetness.',
+        color: 'red',
       },
       {
         name: 'Old Timer - Blend',
@@ -32,13 +32,20 @@ export default function Coffees({ addToCart }: ICoffeeProps) {
         color: 'brown',
       },
       {
-        name: 'Ethiopia - Kochere',
-        price: 14,
-        soldOut: false,
-        comingSoon: true,
+        name: 'Colombia - Madre Laura',
+        price: 17,
         description:
-          'Light and bright, this washed coffee from the Yirgacheffe sub-region boasts delicate floral notes with a peach like sweetness. Coming Soon!',
-        color: 'red',
+          'This natural processed coffee from the Jerico region has a lot to offer! Flavors ranging from citrus notes of blood orange, to caramel, finishing with a snappy lemon lime acidity. Roasted light to preserve the the natural fruit like notes and increase acidity. A limited quantity, this coffee will not last long!',
+        color: 'green',
+      },
+      {
+        name: 'Kenya - Kiambu Peaberry',
+        price: 14,
+        soldOut: true,
+        comingSoon: false,
+        description:
+          'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
+        color: 'purple',
       },
       // {
       //   name: 'Kenya - Kiambu Peaberry',
