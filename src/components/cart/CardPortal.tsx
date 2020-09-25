@@ -5,12 +5,16 @@ import '../offerings/CoffeeCardExtended.scss';
 
 interface IPortalProps {
   children: React.ReactNode;
+  coords: any;
 }
 
-export default function Portal({ children }: IPortalProps) {
+export default function Portal({ children, coords }: IPortalProps) {
+  console.log(coords);
   const cardRoot = document.getElementById('card-root')!;
   return ReactDOM.createPortal(
-    <div className="cardPortal">{children}</div>,
+    <div className="cardPortal">
+      <div style={{ top: coords }}>{children}</div>
+    </div>,
     cardRoot,
   );
 }

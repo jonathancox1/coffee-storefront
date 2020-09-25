@@ -73,23 +73,28 @@
   .cardDescription {
     font-size: 15px;
     line-height: 18px;
+    padding-bottom: 20px;
   }
 
   .extraInfo {
-    padding-top: 20px;
+    // padding-top: 20px;
     font-size: 14px;
-    transition: all 0.3s ease;
+    // transition: all 0.3s ease;
     height: 0;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+
+    .table {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 10px;
+    }
 
     .para {
-      grid-area: 1 / span;
+      padding: 20px 0 20px 0;
     }
 
     &.extend {
-      height: 200px;
+      height: 100%;
     }
   }
 

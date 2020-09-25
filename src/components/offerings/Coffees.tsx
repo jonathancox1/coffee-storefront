@@ -8,12 +8,14 @@ interface ICoffeeProps {
   addToCart: (itemToAdd: {}) => void;
   whichCoffee: (selectedCoffee: {}) => void;
   moreInfo: (moreInfo: boolean) => void;
+  coords: (coords: {}) => void;
 }
 
 export default function Coffees({
   addToCart,
   whichCoffee,
   moreInfo,
+  coords,
 }: ICoffeeProps) {
   const [currentOfferings, setOfferings] = useState([{}]);
   useEffect(() => {
@@ -27,6 +29,12 @@ export default function Coffees({
         description:
           'Light and bright, this washed coffee from the Yirgacheffe sub-region offers the typical clean flavors Ethiopian coffee is known for.  This heirloom variety boasts delicate floral notes with a peach like sweetness.',
         color: 'red',
+        country: 'Ethiopia',
+        region: 'Yirgacheffe',
+        sub: 'Kochere',
+        variety: 'Heirloom',
+        process: 'Washed',
+        alt: '1700-2000msl',
       },
       {
         name: 'Old Timer - Blend',
@@ -36,6 +44,11 @@ export default function Coffees({
         description:
           'Our take on a classic medium roast profile, a revolving blend of Central and South American beans. Old Timer brews a sweet and smooth cup with flavors of chocolate and nuts. Currently 50% El Salvador 50% Guatemala',
         color: 'brown',
+        country: 'El Salvador & Guatemala',
+        region: 'Blend',
+        variety: 'Bourbon & Typica & Caturra',
+        process: 'Washed',
+        alt: '1400-1600msl',
       },
       {
         name: 'Colombia - Madre Laura',
@@ -43,6 +56,13 @@ export default function Coffees({
         description:
           'This natural processed coffee from the Jerico region has a lot to offer! Flavors ranging from citrus notes of blood orange, to caramel, finishing with a snappy lemon lime acidity. Roasted light to preserve the the natural fruit like notes and increase acidity. A limited quantity, this coffee will not last long!',
         color: 'green',
+        country: 'Colombia',
+        region: 'Jerico, Antioquia',
+        variety: 'Dos MIl & Castillo',
+        process: 'Natural',
+        alt: '1700-2000msl',
+        extra:
+          'Only the ripest cherries (24+ brix) are hand selected by the community of growers around he town of Jerico, Anioquia.  Attention to  detail along the entire process is key to bringing out the best that these naturally dried cherries can offer.',
       },
       {
         name: 'Kenya - Kiambu Peaberry',
@@ -52,6 +72,12 @@ export default function Coffees({
         description:
           'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
         color: 'purple',
+        country: 'Kenya',
+        region: 'Kiambu',
+        sub: 'Muranga',
+        variety: 'SL-28',
+        process: 'Washed',
+        alt: '1800msl',
       },
       // {
       //   name: 'Kenya - Kiambu Peaberry',
@@ -86,6 +112,7 @@ export default function Coffees({
             coffeeInfo={offering}
             whichCoffee={whichCoffee}
             moreInfo={moreInfo}
+            coords={coords}
           />
         );
       })}

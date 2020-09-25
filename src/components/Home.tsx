@@ -20,6 +20,7 @@ export default function Home() {
   const [showScroll, setShowScroll] = useState<boolean>(false);
   const [moreInfo, setMoreInfo] = useState<boolean>(false);
   const [selectedCoffee, setSelectedCoffee] = useState<{}>({});
+  const [coords, setCoords] = useState<{}>();
 
   const checkScrollToTop = () => {
     if (!showScroll && window.pageYOffset > 750) {
@@ -43,11 +44,11 @@ export default function Home() {
     setStatus(true);
   };
 
-  useEffect(() => {
-    if (moreInfo) {
-      scrollToCard();
-    }
-  }, [moreInfo]);
+  // useEffect(() => {
+  //   if (moreInfo) {
+  //     scrollToCard();
+  //   }
+  // }, [moreInfo]);
 
   const addToCart = (itemToAdd: {}) => {
     const updatedCart = [...currentItems, itemToAdd];
@@ -107,9 +108,10 @@ export default function Home() {
         addToCart={addToCart}
         whichCoffee={setSelectedCoffee}
         moreInfo={setMoreInfo}
+        coords={setCoords}
       />
       {moreInfo && (
-        <CardPortal>
+        <CardPortal coords={coords}>
           <CoffeeCardExtended
             addToCart={addToCart}
             coffeeInfo={selectedCoffee}
