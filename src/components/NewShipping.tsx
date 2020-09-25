@@ -18,8 +18,8 @@ export default function NewShipping() {
           <img src={shipping} alt="shipping icon" />
         </div>
         <div className="subMessage">
-          Using USPS your coffee will arrive within two business days, ensuring
-          its fresh and ready to drink
+          Using USPS your coffee will arrive quickly, ensuring its vibrant,
+          fresh and ready to drink
         </div>
         <div className="secondaryMessage"></div>
       </div>

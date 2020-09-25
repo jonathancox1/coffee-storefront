@@ -53,6 +53,8 @@ export default function Coffees({
       {
         name: 'Colombia - Madre Laura',
         price: 17,
+        soldOut: false,
+        comingSoon: false,
         description:
           'This natural processed coffee from the Jerico region has a lot to offer! Flavors ranging from citrus notes of blood orange, to caramel, finishing with a snappy lemon lime acidity. Roasted light to preserve the the natural fruit like notes and increase acidity. A limited quantity, this coffee will not last long!',
         color: 'green',

@@ -162,7 +162,7 @@ export default function Checkout({
               <input
                 type="text"
                 name="userName"
-                placeholder="name"
+                placeholder=""
                 onChange={(e) => handleChange(e)}
                 required
               />
@@ -170,7 +170,7 @@ export default function Checkout({
               <input
                 type="text"
                 name="email"
-                placeholder="email"
+                placeholder=""
                 onChange={(e) => handleChange(e)}
                 required
               />
@@ -178,7 +178,7 @@ export default function Checkout({
               <input
                 type="text"
                 name="phone"
-                placeholder="phone"
+                placeholder=""
                 onChange={(e) => handleChange(e)}
                 required
               />
@@ -186,7 +186,7 @@ export default function Checkout({
               <input
                 type="text"
                 name="address"
-                placeholder="street address"
+                placeholder=""
                 onChange={(e) => handleChange(e)}
                 required
               />
@@ -194,7 +194,7 @@ export default function Checkout({
               <input
                 type="text"
                 name="zipcode"
-                placeholder="zipcode"
+                placeholder=""
                 onChange={(e) => handleChange(e)}
                 required
               />
@@ -202,7 +202,7 @@ export default function Checkout({
               <input
                 type="checkbox"
                 name="state"
-                placeholder="state"
+                placeholder=""
                 onChange={(e) => setShipping((current) => !current)}
                 className="stateBox"
                 required

@@ -23,9 +23,9 @@ export default function Home() {
   const [coords, setCoords] = useState<{}>();
 
   const checkScrollToTop = () => {
-    if (!showScroll && window.pageYOffset > 750) {
+    if (!showScroll && window.pageYOffset > 950) {
       setShowScroll(true);
-    } else if (showScroll && window.pageYOffset <= 750) {
+    } else if (showScroll && window.pageYOffset <= 950) {
       setShowScroll(false);
     }
   };
