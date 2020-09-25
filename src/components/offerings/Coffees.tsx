@@ -60,7 +60,7 @@ export default function Coffees({
         color: 'green',
         country: 'Colombia',
         region: 'Jerico, Antioquia',
-        variety: 'Dos MIl & Castillo',
+        variety: 'Dos Mil & Castillo',
         process: 'Natural',
         alt: '1700-2000msl',
         extra:
