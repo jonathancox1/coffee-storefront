@@ -18,9 +18,9 @@ export default function Home() {
   const [showScroll, setShowScroll] = useState<boolean>(false);
 
   const checkScrollToTop = () => {
-    if (!showScroll && window.pageYOffset > 750) {
+    if (!showScroll && window.pageYOffset > 950) {
       setShowScroll(true);
-    } else if (showScroll && window.pageYOffset <= 750) {
+    } else if (showScroll && window.pageYOffset <= 950) {
       setShowScroll(false);
     }
   };
