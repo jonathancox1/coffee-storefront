@@ -15,6 +15,14 @@
     // filter: grayscale(90%) opacity(25%);
   }
 
+  &.cardExtended {
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    // filter: grayscale(90%) opacity(25%);
+  }
+
   .header {
     position: fixed;
     top: 0;

@@ -73,11 +73,34 @@
   .cardDescription {
     font-size: 15px;
     line-height: 18px;
+    padding-bottom: 20px;
+  }
+
+  .extraInfo {
+    // padding-top: 20px;
+    font-size: 14px;
+    // transition: all 0.3s ease;
+    height: 0;
+    overflow: hidden;
+
+    .table {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 10px;
+    }
+
+    .para {
+      padding: 20px 0 20px 0;
+    }
+
+    &.extend {
+      height: 100%;
+    }
   }
 
   .buttonBar {
     display: grid;
-    grid-template-columns: 100px auto;
+    grid-template-columns: 110px 110px auto;
     padding: 10px 0;
 
     button {
@@ -86,6 +109,7 @@
       border: 1px solid white;
       border-radius: 5px;
       transition: all 0.2s ease;
+      margin: 0 5px;
 
       &.comingSoon {
         display: none;
@@ -119,9 +143,9 @@
       &:active {
         box-shadow: rgba(0, 0, 0, 0.22) 0px 4px 23px,
           rgba(0, 0, 0, 0.18) 0px 2px 8px;
-        // transform: translateY(1px);
-        width: 99%;
-        height: 99%;
+        transform: translateY(1px);
+        // width: 99%;
+        // height: 99%;
       }
     }
   }
