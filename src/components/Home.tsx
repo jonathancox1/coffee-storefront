@@ -35,9 +35,9 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToCard = () => {
-    window.scrollTo({ top: 25, behavior: 'smooth' });
-  };
+  // const scrollToCard = () => {
+  //   window.scrollTo({ top: 25, behavior: 'smooth' });
+  // };
 
   const openCart = () => {
     // show cart modal
