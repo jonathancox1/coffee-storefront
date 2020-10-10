@@ -13,7 +13,7 @@ export default function Success() {
       You will receive an email from PayPal as your receipt.
       <br />
       <br />
-      As a reminder, you're coffee(s) will be roasted this coming Sunday
+      As a reminder, all orders are roasted on Sunday.
       <br />
       <Link to="/" className="returnLink">
         Return home
