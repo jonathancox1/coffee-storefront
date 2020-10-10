@@ -12,6 +12,7 @@ export default function Success() {
       <br />
       You will receive an email from PayPal as your receipt.
       <br />
+      <br />
       As a reminder, you're coffee(s) will be roasted this coming Sunday
       <br />
       <Link to="/" className="returnLink">
