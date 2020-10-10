@@ -8,7 +8,11 @@ export default function Success() {
     <div className="successWrapper">
       <div className="thankYou">Thank You!</div>
       <br />
-      We've received your order and will begin processing it soon.
+      We've received your payment and your transaction is complete.
+      <br />
+      You will receive an email from PayPal as your receipt.
+      <br />
+      As a reminder, you're coffee(s) will be roasted this coming Sunday
       <br />
       <Link to="/" className="returnLink">
         Return home
