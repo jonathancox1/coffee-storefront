@@ -16,6 +16,7 @@ export default function Checkout({
   items,
 }: ICheckoutProps) {
   const [shipping, setShipping] = useState<boolean>(false);
+  const [discount, setDiscount] = useState<number>();
   const [check, toggleCheck] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
   const [user, setUser] = useState({
@@ -37,6 +38,9 @@ export default function Checkout({
     if (shipping) {
       tempTotal += 10;
     }
+    if (discount) {
+      tempTotal -= discount;
+    }
     return tempTotal;
   };
 
@@ -46,6 +50,12 @@ export default function Checkout({
     }
     const itemToUpdate: any = e.target.name;
     setUser({ ...user, [itemToUpdate]: e.target.value });
+  };
+
+  const validateDiscount = (e: any) => {
+    if (e.target.value === '15off') {
+      setDiscount(15);
+    }
   };
 
   const isValid = () => {
@@ -140,6 +150,13 @@ export default function Checkout({
             <div className="subtotalText">Shipping</div>
             <div className="subtotal">{shipping ? '$10' : '-'}</div>
 
+            {discount ? (
+              <>
+                <div className="totalText">Discount</div>
+                <div className="calcTotal">${discount}</div>
+              </>
+            ) : null}
+
             <div className="totalText">Total</div>
             <div className="calcTotal">${generateSubTotal()}</div>
           </div>
@@ -196,6 +213,15 @@ export default function Checkout({
                 name="zipcode"
                 placeholder=""
                 onChange={(e) => handleChange(e)}
+                required
+              />
+              <label>Discount Code</label>
+              <input
+                type="text"
+                name="state"
+                placeholder=""
+                onChange={(e) => validateDiscount(e)}
+                className="discountCode"
                 required
               />
               <label>$10 Shipping</label>
