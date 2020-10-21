@@ -51,6 +51,21 @@ export default function Coffees({
         alt: '1400-1600msl',
       },
       {
+        name: 'Costa Rica - Esperanza',
+        price: 12,
+        soldOut: false,
+        comingSoon: false,
+        description:
+          'This is the perfect way to start your day, this very typical coffee from the Tarrazu region offers up a clean and straightforward sweet cup with hints of dark chocolate, citrus and honey.  Tarrazu coffees are known to have a heavy body and complex aromas.',
+        color: 'purple',
+        country: 'Costa Rica',
+        region: 'Tarrazu',
+        variety: 'Caturra, Catuai',
+        process: 'Washed',
+        alt: '1200-1800msl',
+        extra: 'Copa De Esperanza translates to the "Cup of Hope"'
+      },
+      {
         name: 'Colombia - Madre Laura',
         price: 17,
         soldOut: true,
@@ -66,21 +81,21 @@ export default function Coffees({
         extra:
           'Only the ripest cherries (24+ brix) are hand selected by the community of growers around he town of Jerico, Anioquia.  Attention to  detail along the entire process is key to bringing out the best that these naturally dried cherries can offer.',
       },
-      {
-        name: 'Kenya - Kiambu Peaberry',
-        price: 14,
-        soldOut: true,
-        comingSoon: false,
-        description:
-          'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
-        color: 'purple',
-        country: 'Kenya',
-        region: 'Kiambu',
-        sub: 'Muranga',
-        variety: 'SL-28',
-        process: 'Washed',
-        alt: '1800msl',
-      },
+      // {
+      //   name: 'Kenya - Kiambu Peaberry',
+      //   price: 14,
+      //   soldOut: true,
+      //   comingSoon: false,
+      //   description:
+      //     'A rare and exciting coffee from one of my favorite origins.  Roasted light, this coffee shows a complex profile. Subtle notes of berries and dark chocolate with a medium body.',
+      //   color: 'purple',
+      //   country: 'Kenya',
+      //   region: 'Kiambu',
+      //   sub: 'Muranga',
+      //   variety: 'SL-28',
+      //   process: 'Washed',
+      //   alt: '1800msl',
+      // },
       // {
       //   name: 'Kenya - Kiambu Peaberry',
       //   price: 14,
