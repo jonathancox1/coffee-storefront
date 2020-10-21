@@ -52,7 +52,7 @@ export default function Coffees({
       },
       {
         name: 'Costa Rica - Esperanza',
-        price: 12,
+        price: 13,
         soldOut: false,
         comingSoon: false,
         description:
