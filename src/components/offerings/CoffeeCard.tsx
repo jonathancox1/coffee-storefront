@@ -21,6 +21,14 @@ export default function CoffeeCard({
     name,
     price,
     description,
+    description1,
+    description2,
+    description3,
+    coffee1,
+    coffee2,
+    coffee3,
+    sub1,
+    sub2,
     color,
     soldOut,
     comingSoon,
@@ -54,6 +62,27 @@ export default function CoffeeCard({
         <div className="cardName">{name}</div>
         <div className="cardPrice">${price}</div>
         <div className="cardDescription">{description}</div>
+        {description1 && (
+          <>
+            <div className="cardDescription">
+              {sub1}
+              <br />
+              {sub2}
+            </div>
+            <div className="cardDescription">
+              <b>{coffee1}</b>
+              {description1}
+            </div>
+            <div className="cardDescription">
+              <b>{coffee2}</b>
+              {description2}
+            </div>
+            <div className="cardDescription">
+              <b>{coffee3}</b>
+              {description3}
+            </div>
+          </>
+        )}
         <div className={`extraInfo ${isExtended && 'extend'}`}>
           <div className="table">
             <div>Country</div>

@@ -22,6 +22,33 @@ export default function Coffees({
     // TODO call API get current offerings
     setOfferings([
       {
+        name: 'Holiday Coffee Flight - Pre Order',
+        price: 25,
+        soldOut: false,
+        comingSoon: false,
+        description:
+          'Three coffees showcasing flavors from around the world! 3x 200gram bags of coffee.',
+        sub1: 'Ships December 21st',
+        sub2: 'Orders must be placed by December 18th',
+        coffee1: 'Old Timer',
+        description1:
+          ' our flagship blend, this classic roast is sure to be a crowd pleaser and will put a smile on your grumpy uncles face.  ',
+        coffee2: 'Costa Rica Esperanza',
+        description2:
+          ' the "Cup of Hope", with notes of deep dark chocolate and a hint of citrus, strong and rich aromas give it that nostalgic feeling.  ',
+        coffee3: 'Ethiopia Hambela Goro',
+        description3:
+          ' naturally processed and showcases intense fruit flavors which are perfect for your coffee curious cousin.',
+        color: 'holiday',
+        country: 'Guatemala/Brazil, Costa Rica, Ethiopia',
+        region: 'Varies',
+        variety: 'Bourbon, Typica, Caturra, Catuai, Heirloom',
+        process: 'Washed/Washed/Natural',
+        alt: '1400-2000msl',
+        extra:
+          'Perfect for giving as a gift or as a special treat for yourself.  Experience the range of flavors inherent in coffee from around the world.  This sampler will ship on December 21st.  Each Holiday Sampler comes with the above coffees in 200 gram bags, for a total of 600 grams = 1.3 pounds of coffee',
+      },
+      {
         name: 'Ethiopia - Kochere',
         price: 14,
         soldOut: false,
@@ -50,21 +77,21 @@ export default function Coffees({
         process: 'Washed',
         alt: '1400-1600msl',
       },
-      {
-        name: 'Costa Rica - Esperanza',
-        price: 13,
-        soldOut: false,
-        comingSoon: false,
-        description:
-          'This is the perfect way to start your day, this very typical coffee from the Tarrazu region offers up a clean and straightforward sweet cup with hints of dark chocolate, citrus and honey.  Tarrazu coffees are known to have a heavy body and complex aromas.',
-        color: 'purple',
-        country: 'Costa Rica',
-        region: 'Tarrazu',
-        variety: 'Caturra, Catuai',
-        process: 'Washed',
-        alt: '1200-1800msl',
-        extra: 'Copa De Esperanza translates to the "Cup of Hope"'
-      },
+      // {
+      //   name: 'Costa Rica - Esperanza',
+      //   price: 13,
+      //   soldOut: false,
+      //   comingSoon: false,
+      //   description:
+      //     'This is the perfect way to start your day, this very typical coffee from the Tarrazu region offers up a clean and straightforward sweet cup with hints of dark chocolate, citrus and honey.  Tarrazu coffees are known to have a heavy body and complex aromas.',
+      //   color: 'purple',
+      //   country: 'Costa Rica',
+      //   region: 'Tarrazu',
+      //   variety: 'Caturra, Catuai',
+      //   process: 'Washed',
+      //   alt: '1200-1800msl',
+      //   extra: 'Copa De Esperanza translates to the "Cup of Hope"',
+      // },
       {
         name: 'Colombia - Madre Laura',
         price: 17,

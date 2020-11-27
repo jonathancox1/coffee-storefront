@@ -8,6 +8,16 @@
   box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px,
     rgba(0, 0, 0, 0.18) 0px 4px 11px;
 
+  &.holiday {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      170deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(251, 1, 1, 0.65) 0%,
+      rgb(42, 224, 103) 100%
+    );
+  }
+
   &.purple {
     background: rgb(2, 0, 36);
     background: linear-gradient(
