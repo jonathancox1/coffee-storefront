@@ -24,7 +24,7 @@ export default function Coffees({
       {
         name: 'Holiday Coffee Flight - Pre Order',
         price: 25,
-        soldOut: false,
+        soldOut: true,
         comingSoon: false,
         description:
           'Three coffees showcasing flavors from around the world! 3x 200gram bags of coffee.',
